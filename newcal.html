@@ -1,211 +1,115 @@
-<style>
-    .calculators-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 40px auto;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .calculator {
-      width: 48%;
-      padding: 30px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
-    .calculator:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .calculator h2 {
-      color: #333;
-      margin-bottom: 25px;
-      text-align: center;
-      font-size: 24px;
-    }
-    .input-group {
-      margin-bottom: 20px;
-    }
-    .input-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: #555;
-      font-weight: 600;
-    }
-    .input-group input, .input-group select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      box-sizing: border-box;
-      transition: border-color 0.3s ease;
-    }
-    .input-group input:focus, .input-group select:focus {
-      outline: none;
-      border-color: #4CAF50;
-    }
-    .time-inputs {
-      display: flex;
-      justify-content: space-between;
-    }
-    .time-input {
-      width: 30%;
-    }
-    .calculate-btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 12px 15px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      width: 100%;
-      transition: background-color 0.3s ease;
-    }
-    .calculate-btn:hover {
-      background-color: #45a049;
-    }
-    .result {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #f0f0f0;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-  </style>
-  
-  <div class="calculators-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e6f7e6;
+            font-weight: bold;
+        }
+        .calculator {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h1 {
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2e7d32;
+            font-weight: 700;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #4caf50;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
     <div class="calculator">
-      <h2>Simple Interest Calculator</h2>
-      <div class="input-group">
-        <label for="simpleP">Principal Amount:</label>
-        <input type="number" id="simpleP" placeholder="Enter principal amount">
-      </div>
-      <div class="input-group">
-        <label for="simpleR">Rate of Interest:</label>
-        <input type="number" id="simpleR" placeholder="Enter rate of interest">
-      </div>
-      <div class="input-group">
-        <label>Rate Time Period:</label>
-        <div class="time-inputs">
-          <input type="number" id="simpleRateDays" placeholder="Days" class="time-input">
-          <input type="number" id="simpleRateMonths" placeholder="Months" class="time-input">
-          <input type="number" id="simpleRateYears" placeholder="Years" class="time-input">
+        <h1>Interest Calculator</h1>
+        <div class="input-group">
+            <label for="principal">Principal Amount (₹):</label>
+            <input type="number" id="principal" placeholder="Enter principal amount">
         </div>
-      </div>
-      <div class="input-group">
-        <label>Investment Time Period:</label>
-        <div class="time-inputs">
-          <input type="number" id="simpleDays" placeholder="Days" class="time-input">
-          <input type="number" id="simpleMonths" placeholder="Months" class="time-input">
-          <input type="number" id="simpleYears" placeholder="Years" class="time-input">
+        <div class="input-group">
+            <label for="rate">Interest Rate (% per year):</label>
+            <input type="number" id="rate" placeholder="Enter interest rate">
         </div>
-      </div>
-      <button class="calculate-btn" onclick="calculateSimpleInterest()">Calculate Simple Interest</button>
-      <div id="simpleInterestResult" class="result"></div>
+        <div class="input-group">
+            <label for="time">Time (days):</label>
+            <input type="number" id="time" placeholder="Enter time in days">
+        </div>
+        <button onclick="calculateInterest()">Calculate</button>
+        <div id="result"></div>
     </div>
-  
-    <div class="calculator">
-      <h2>Compound Interest Calculator</h2>
-      <div class="input-group">
-        <label for="compoundP">Principal Amount:</label>
-        <input type="number" id="compoundP" placeholder="Enter principal amount">
-      </div>
-      <div class="input-group">
-        <label for="compoundR">Rate of Interest:</label>
-        <input type="number" id="compoundR" placeholder="Enter rate of interest">
-      </div>
-      <div class="input-group">
-        <label>Rate Time Period:</label>
-        <div class="time-inputs">
-          <input type="number" id="compoundRateDays" placeholder="Days" class="time-input">
-          <input type="number" id="compoundRateMonths" placeholder="Months" class="time-input">
-          <input type="number" id="compoundRateYears" placeholder="Years" class="time-input">
-        </div>
-      </div>
-      <div class="input-group">
-        <label>Investment Time Period:</label>
-        <div class="time-inputs">
-          <input type="number" id="compoundDays" placeholder="Days" class="time-input">
-          <input type="number" id="compoundMonths" placeholder="Months" class="time-input">
-          <input type="number" id="compoundYears" placeholder="Years" class="time-input">
-        </div>
-      </div>
-      <div class="input-group">
-        <label for="compoundN">Compounding Frequency:</label>
-        <select id="compoundN">
-          <option value="1">Annually</option>
-          <option value="2">Semi-Annually</option>
-          <option value="4">Quarterly</option>
-          <option value="12">Monthly</option>
-          <option value="365">Daily</option>
-        </select>
-      </div>
-      <button class="calculate-btn" onclick="calculateCompoundInterest()">Calculate Compound Interest</button>
-      <div id="compoundInterestResult" class="result"></div>
-    </div>
-  </div>
-  
-  <script>
-  function calculateYears(days, months, years) {
-    return years + (months / 12) + (days / 365);
-  }
-  
-  function calculateSimpleInterest() {
-    const p = parseFloat(document.getElementById('simpleP').value);
-    const r = parseFloat(document.getElementById('simpleR').value);
-    const rateDays = parseFloat(document.getElementById('simpleRateDays').value) || 0;
-    const rateMonths = parseFloat(document.getElementById('simpleRateMonths').value) || 0;
-    const rateYears = parseFloat(document.getElementById('simpleRateYears').value) || 0;
-    const days = parseFloat(document.getElementById('simpleDays').value) || 0;
-    const months = parseFloat(document.getElementById('simpleMonths').value) || 0;
-    const years = parseFloat(document.getElementById('simpleYears').value) || 0;
-    
-    const rateTime = calculateYears(rateDays, rateMonths, rateYears);
-    const t = calculateYears(days, months, years);
-    
-    if (isNaN(p) || isNaN(r) || rateTime === 0 || t === 0) {
-      alert('Please enter valid numbers for all fields');
-      return;
-    }
-  
-    const annualRate = (r / rateTime) / 100;
-    const interest = p * annualRate * t;
-    const total = p + interest;
-  
-    document.getElementById('simpleInterestResult').innerHTML = `
-      <p>Interest: ₹${interest.toFixed(2)}</p>
-      <p>Total Amount: ₹${total.toFixed(2)}</p>
-    `;
-  }
-  
-  function calculateCompoundInterest() {
-    const p = parseFloat(document.getElementById('compoundP').value);
-    const r = parseFloat(document.getElementById('compoundR').value);
-    const rateDays = parseFloat(document.getElementById('compoundRateDays').value) || 0;
-    const rateMonths = parseFloat(document.getElementById('compoundRateMonths').value) || 0;
-    const rateYears = parseFloat(document.getElementById('compoundRateYears').value) || 0;
-    const days = parseFloat(document.getElementById('compoundDays').value) || 0;
-    const months = parseFloat(document.getElementById('compoundMonths').value) || 0;
-    const years = parseFloat(document.getElementById('compoundYears').value) || 0;
-    const n = parseFloat(document.getElementById('compoundN').value);
-    
-    const rateTime = calculateYears(rateDays, rateMonths, rateYears);
-    const t = calculateYears(days, months, years);
-    
-    if (isNaN(p) || isNaN(r) || rateTime === 0 || t === 0 || isNaN(n)) {
-      alert('Please enter valid numbers for all fields');
-      return;
-    }
-  
-    const annualRate = (r / rateTime) / 100;
-    const amount = p * Math.pow(1 + (annualRate / n), n * t);
-    const interest = amount - p;
-  
-    document.getElementById('compoundInterestResult').innerHTML = `
-      <p>Interest: ₹${interest.toFixed(2)}</p>
-      <p>Total Amount: ₹${amount.toFixed(2)}</p>
-    `;
-  }
-  </script>
+
+    <script>
+        function calculateInterest() {
+            const principal = parseFloat(document.getElementById('principal').value);
+            const rate = parseFloat(document.getElementById('rate').value);
+            const time = parseFloat(document.getElementById('time').value);
+
+            if (isNaN(principal) || isNaN(rate) || isNaN(time)) {
+                document.getElementById('result').innerHTML = 'Please enter valid numbers';
+                return;
+            }
+
+            const interest = (principal * rate * time) / (365 * 100);
+            const total = principal + interest;
+
+            document.getElementById('result').innerHTML = `
+                Interest: ₹${interest.toFixed(2)}<br>
+                Total Amount: ₹${total.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>
