@@ -220,6 +220,8 @@
        * {
             box-sizing: inherit;
         }
+
+       /* Ensure all sections and content respect the viewport width */
         .section, .container, .row, [class^="col-"] {
             max-width: 100%;
             padding-left: 15px;
@@ -608,7 +610,7 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="newcal.html">Interest Rate Calculator</a></li>
+            <li><a href="newcal.html">Interest Calculator</a></li>
         </ul>
     </nav>
     <main>
@@ -632,47 +634,72 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="service-item">
+                    <div class="service-item" id="business-loans">
                         <i class="fas fa-briefcase"></i>
                         <h3>Business Loans</h3>
                         <p class="service-brief">Financial support for your business</p>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="service-item">
-                        <i class="fas fa-piggy-bank"></i>
-                        <h3>Chit Funds</h3>
-                        <p class="service-brief">Collective savings and borrowing</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="service-item">
+                    <div class="service-item" id="fixed-deposit">
                         <i class="fas fa-chart-line"></i>
                         <h3>Fixed Deposit</h3>
                         <p class="service-brief">Get interests upto 12%* p.a</p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="service-item">
-                        <i class="fas fa-hand-holding-usd"></i>
-                        <h3>Investment Advisory</h3>
-                        <p class="service-brief">Expert investment guidance</p>
-                    </div>
-                </div>
             </div>
+        
+            <!-- Personal Loans Modal -->
             <div id="personal-loans-info" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Personal Loans</h2>
-                    <p>At Amudhasurabhi Niruvanam, we offer flexible personal loans to meet your financial needs:</p>
+                    <p>At Amudha Surabhi Niruvanam, we offer flexible personal loans to meet your financial needs:</p>
                     <ul>
                         <li>Loan amounts from ₹10,000 to ₹5,00,000</li>
                         <li>Competitive interest rates</li>
                         <li>Quick approval process, often within 24 hours</li>
+                        <li>Flexible repayment options</li>
+                        <li>Minimal documentation required</li>
                     </ul>
                     <p>Contact us today to discuss how we can help you achieve your financial goals!</p>
                 </div>
             </div>
+        
+            <!-- Business Loans Modal -->
+            <div id="business-loans-info" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Business Loans</h2>
+                    <p>Amudha Surabhi Niruvanam offers tailored business loans to support your company's growth:</p>
+                    <ul>
+                        <li>Loan amounts from ₹50,000 to ₹10,00,000</li>
+                        <li>Competitive interest rates for businesses</li>
+                        <li>Quick approval process, typically within 48 hours</li>
+                        <li>Flexible repayment terms to suit your business cash flow</li>
+                        <li>Options for both secured and unsecured loans</li>
+                    </ul>
+                    <p>Let us help you take your business to the next level!</p>
+                </div>
+            </div>
+        
+            <!-- Fixed Deposit Modal -->
+            <div id="fixed-deposit-info" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Fixed Deposit</h2>
+                    <p>Secure your savings with our high-yield fixed deposit options:</p>
+                    <ul>
+                        <li>Interest rates up to 15%* p.a.</li>
+                        <li>Flexible tenure options from 3 months to 5 years</li>
+                        <li>Minimum deposit amount of ₹1,00,000</li>
+                        <li>Option for regular interest payouts or cumulative growth</li>
+                        <li>Special rates for senior citizens</li>
+                    </ul>
+                    <p>*Terms and conditions apply. Contact us for the latest rates and offers!</p>
+                </div>
+            </div>
+        </section>
             <p>At Amudhasurabhi Niruvanam, we offer tailored financial solutions to meet your unique needs. Whether you're looking to grow your business, manage personal finances, or plan for the future, our expert team is here to help.</p>
         </section>
         <section id="about">
@@ -706,28 +733,28 @@
             <h2>Meet Our Directors</h2>
             <div class="owner-grid">
                 <div class="owner-card">
-                    <img src="ns.jpg" alt="Mr. Subramanian" class="director-image">
+                    <img src="images/ns_final.jpg" alt="Mr. Subramanian" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Subramanian</h3>
                         <p>"Our goal is to empower individuals and businesses with sound financial advice."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="path/to/" alt="Mr. Thiruvengadam" class="director-image">
+                    <img src="images/placeholder.jpg" alt="Mr. Thiruvengadam" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Thiruvengadam</h3>
                         <p>"We strive to provide the best financial solutions for our clients."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="thirumal.jpg" class="director-image">
+                    <img src="images/tt.jpg" alt="Mr. Thirumalvalvan" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Thirumalvalavan</h3>
                         <p>"At Amudhasurabhi Niruvanam, we're committed to helping our community thrive financially."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="rr.jpg" alt="Mr. Raja" class="director-image">
+                    <img src="images/rr.jpg" alt="Mr. Raja" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Raja</h3>
                         <p>"We're dedicated to fostering financial growth in our community."</p>
@@ -824,5 +851,41 @@
         window.addEventListener('scroll', handleScroll);
         window.addEventListener('load', handleScroll);
     </script>
+    <script>
+        // Get all modals
+        var modals = document.getElementsByClassName('modal');
+        
+        // Get all service items that open the modals
+        var serviceItems = document.querySelectorAll('.service-item');
+        
+        // Get all <span> elements that close the modals
+        var spans = document.getElementsByClassName("close");
+        
+        // When the user clicks on a service item, open the corresponding modal
+        serviceItems.forEach(function(item) {
+            item.onclick = function() {
+                var modalId = this.id + '-info';
+                document.getElementById(modalId).style.display = "block";
+            }
+        });
+        
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function() {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                }
+            }
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+                }
+            }
+        }
+        </script>
 </body>
 </html>
