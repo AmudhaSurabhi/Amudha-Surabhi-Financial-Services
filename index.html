@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amudhasurabhi Financial Services</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -318,36 +320,34 @@
             margin-top: -60px;
         }
         #owners {
-            padding: 2rem 0;
-            background-color: #f0f8f0;
-        }
-        .owner-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
-        .owner-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .owner-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .owner-info {
-            padding: 1rem;
-        }
-        .owner-info h3 {
-            margin-top: 0;
-            color: #2e8b57;
-        }
-        .owner-info p {
-            font-style: italic;
-        }
+        padding: 2rem 0;
+        background-color: #f0f8f0;
+    }
+
+    .owner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .owner-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+    }
+
+    .owner-info h3 {
+        margin-top: 0;
+        color: #2e8b57;
+        margin-bottom: 0.5rem;
+    }
+
+    .owner-info p {
+        font-style: italic;
+        margin-bottom: 0;
+    }
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -470,14 +470,7 @@
             margin: 0;
             padding: 0;
         }
-        .director-image {
-            width: 200px;
-            height: 300px;  /* Increased height for portrait orientation */
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+        
         .owner-card {
             text-align: center;
             padding: 1rem;
@@ -487,12 +480,7 @@
             transition: transform 0.3s ease;
             max-width: 250px;  /* Limit the width of the card */
         }
-
-        .owner-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
+        
         .owner-info h3 {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
@@ -597,6 +585,183 @@
         .director-image:hover {
             transform: scale(1.05);
         }
+        .contact-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .phone-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #007bff;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .phone-icon:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .phone-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2em;
+            }
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .contact-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .phone-icon {
+            background-color: #007bff;
+        }
+
+        .phone-icon:hover {
+            background-color: #0056b3;
+        }
+
+        .email-icon {
+            background-color: #dc3545;
+        }
+
+        .email-icon:hover {
+            background-color: #c82333;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2em;
+            }
+        }
+        .fas, .far, .fab {
+            font-size: 1.2em; /* Slightly larger icons */
+            vertical-align: middle;
+            margin-right: 0.5em; /* Space between icon and text */
+        }
+
+        nav .fas {
+            font-size: 1em; /* Adjust size for nav icons */
+        }
+
+        .service-item .fas {
+            font-size: 2.5em; /* Larger icons for services */
+            margin-bottom: 0.5em;
+            color: #4CAF50; /* Use your primary color */
+        }
+
+        .contact-icon {
+            font-size: 1.5em;
+            width: 50px;
+            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #4CAF50; /* Use your primary color */
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        body {
+            text-align: center;
+        }
+
+        nav ul {
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .col {
+            flex: 0 0 300px;
+            margin: 15px;
+        }
+
+        .service-item {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        address {
+            margin-top: 20px;
+        }
+
+        /* Adjustments for icons */
+        .fas, .far, .fab {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .service-item .fas {
+            font-size: 3em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .col {
+                flex: 0 0 100%;
+            }
+        }
+        .modal-content {
+            text-align: left; /* Align all text to the left by default */
+        }
+
+        .modal-content h2 {
+            text-align: center; /* Keep the heading centered */
+        }
+
+        .loan-features {
+            padding-left: 20px; /* Add some padding to align with the text */
+        }
+
+        .loan-features li {
+            text-align: left;
+            margin-bottom: 10px; /* Add some space between list items */
+        }
     </style>
 </head>
 <body>
@@ -615,41 +780,39 @@
     </nav>
     <main>
         <section id="home">
-            <div id="home" class="section">
-                <div class="home-content">
-                    <h2>Welcome to Amudhasurabhi Niruvanam</h2>
-                    <p class="tagline">We provide expert financial services to help you achieve your financial goals.</p>
-                    <a href="#contact" class="cta-button">Get Started</a>
-                </div>
+            <div class="home-content">
+                <h2>Welcome to Amudhasurabhi Niruvanam</h2>
+                <p class="tagline">We provide expert financial services to help you achieve your financial goals.</p>
+                <a href="#contact" class="cta-button">Get Started</a>
             </div>
         </section>
+
         <section id="services">
             <h2>Our Services</h2>
             <div class="row">
                 <div class="col">
                     <div class="service-item" id="personal-loans">
-                        <i class="fas fa-money-bill-wave"></i>
+                        <i class="fas fa-wallet"></i>
                         <h3>Personal Loans</h3>
                         <p class="service-brief">Click for more information</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="service-item" id="business-loans">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-chart-line"></i>
                         <h3>Business Loans</h3>
                         <p class="service-brief">Financial support for your business</p>
                     </div>
                 </div>
                 <div class="col">
                     <div class="service-item" id="fixed-deposit">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-piggy-bank"></i>
                         <h3>Fixed Deposit</h3>
                         <p class="service-brief">Get interests upto 12%* p.a</p>
                     </div>
                 </div>
             </div>
-        
-            <!-- Personal Loans Modal -->
+        </section>
             <div id="personal-loans-info" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -665,14 +828,12 @@
                     <p>Contact us today to discuss how we can help you achieve your financial goals!</p>
                 </div>
             </div>
-        
-            <!-- Business Loans Modal -->
             <div id="business-loans-info" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
                     <h2>Business Loans</h2>
                     <p>Amudha Surabhi Niruvanam offers tailored business loans to support your company's growth:</p>
-                    <ul>
+                    <ul class="loan-features">
                         <li>Loan amounts from ₹50,000 to ₹10,00,000</li>
                         <li>Competitive interest rates for businesses</li>
                         <li>Quick approval process, typically within 48 hours</li>
@@ -682,8 +843,6 @@
                     <p>Let us help you take your business to the next level!</p>
                 </div>
             </div>
-        
-            <!-- Fixed Deposit Modal -->
             <div id="fixed-deposit-info" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
@@ -706,13 +865,28 @@
             <h2>About Us</h2>
             <p>Amudhasurabhi Niruvanam is a trusted financial services provider with years of experience in helping individuals and businesses achieve financial success.</p>
         </section>
+
         <section id="contact">
             <h2>Contact Us</h2>
-            <p>Email: amudhasurabhi@gmail.com</p>
-            <p>Phone: +91 9842356000</p>
-            <p>Address: No.12, 2nd floor, Neyveli Plaza, Vadakuthu, Indira Nagar, Chennai - Kumbakonam National Highway, Kurinjipadi Taluk, Cuddalore district, Tamil Nadu, India
+            <div class="contact-item">
+                <a href="mailto:amudhasurabhi@gmail.com" class="contact-icon email-icon" aria-label="Email us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <span>amudhasurabhi@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <a href="tel:+919361886216" class="contact-icon phone-icon" aria-label="Call us">
+                    <i class="fas fa-phone-alt"></i>
+                </a>
+                <span>+91 9361886216</span>
+            </div>
+            <address>
+                <i class="fas fa-map-marker-alt"></i>
+                No.12, 2nd floor, Neyveli Plaza, Vadakuthu, Indira Nagar,<br>
+                Chennai - Kumbakonam National Highway, Kurinjipadi Taluk,<br>
+                Cuddalore district, Tamil Nadu, India<br>
                 Pin: 607308
-            </p>
+            </address>
         </section>
         <section id="testimonials">
             <div id="testimonials" class="section">
@@ -733,28 +907,24 @@
             <h2>Meet Our Directors</h2>
             <div class="owner-grid">
                 <div class="owner-card">
-                    <img src="images/ns_final.jpg" alt="Mr. Subramanian" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Subramanian</h3>
                         <p>"Our goal is to empower individuals and businesses with sound financial advice."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="images/placeholder.jpg" alt="Mr. Thiruvengadam" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Thiruvengadam</h3>
                         <p>"We strive to provide the best financial solutions for our clients."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="images/tt.jpg" alt="Mr. Thirumalvalvan" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Thirumalvalavan</h3>
                         <p>"At Amudhasurabhi Niruvanam, we're committed to helping our community thrive financially."</p>
                     </div>
                 </div>
                 <div class="owner-card">
-                    <img src="images/rr.jpg" alt="Mr. Raja" class="director-image">
                     <div class="owner-info">
                         <h3>Mr. Raja</h3>
                         <p>"We're dedicated to fostering financial growth in our community."</p>
